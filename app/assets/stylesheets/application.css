@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .fade-edge {
+    mask-image: radial-gradient(circle, white 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, white 70%, transparent 100%);
+  }
+
+  .fade-sides {
+    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  }
+  

@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ycromp</title>
+    <title>Y Cromp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <%= javascript_importmap_tags %>
   </head>
+  <body class="bg-gray-100 text-gray-900">
+    <div class="flex">
+      <!-- Fixed Sidebar Left -->
+      <div class="fixed inset-y-0 left-0 w-64 bg-black text-white flex flex-col items-center justify-center">
+        <div class="flex-shrink-0 px-8 pt-2 pb-4 flex items-center">
+          <img src="<%= asset_path('ycromp-cactus.png') %>" alt="Logo" class="w-full object-contain fade-sides">
+        </div>
+        <nav class="mt-10 flex-1">
+          <%= link_to 'hmu', contact_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+          <%= link_to 'blog', root_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+        </nav>
+      </div>
 
-  <body class="prose mx-auto">
-    <% if user_signed_in? %>
-      <%# link_to "Profile", edit_user_registration_path %>
-      <%= link_to "New Blog Post", new_blog_post_path %>
-      <%= button_to "Logout", destroy_user_session_path, method: :delete %>
-    <%# else %>
-      <%# link_to "Login", new_user_session_path %>
-      <%# link_to "Sign Up", new_user_registration_path %>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <!-- Main Content -->
+      <div class="ml-64 mr-64 flex-1 p-6 bg-black text-white">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+
+      <!-- Fixed Sidebar Right -->
+      <div class="fixed inset-y-0 right-0 w-64 bg-black text-white flex flex-col items-center justify-center space-y-10">
+        <%= link_to 'https://twitter.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-twitter fa-2x"></i>
+        <% end %>
+        <%= link_to 'https://linkedin.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-linkedin fa-2x"></i>
+        <% end %>
+        <%= link_to 'https://github.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-github fa-2x"></i>
+        <% end %>
+        <%= link_to 'https://youtube.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-youtube fa-2x"></i>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to "new post", new_blog_post_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>
