@@ -5,5 +5,3 @@ import "controllers"
 import "trix"
 import "@rails/actiontext"
 
-require("@rails/activestorage").start()
-
