@@ -19,8 +19,8 @@
           <img src="<%= asset_path('ycromp-cactus.png') %>" alt="Logo" class="w-full object-contain fade-sides">
         </div>
         <nav class="mt-10 flex-1">
-          <%= link_to 'hmu', contact_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
-          <%= link_to 'blog', root_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+          <%#= link_to 'hmu', contact_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+          <%#= link_to 'blog', root_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
         </nav>
       </div>
 
@@ -33,17 +33,14 @@
 
       <!-- Fixed Sidebar Right -->
       <div class="fixed inset-y-0 right-0 w-64 bg-black text-white flex flex-col items-center justify-center space-y-10">
-        <%= link_to 'https://twitter.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
-          <i class="fab fa-twitter fa-2x"></i>
+        <%= link_to 'https://www.linkedin.com/in/ryan-richardson262/', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-linkedin fa-3x"></i>
         <% end %>
-        <%= link_to 'https://linkedin.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
-          <i class="fab fa-linkedin fa-2x"></i>
+        <%= link_to 'https://github.com/westnorthern', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-github fa-3x"></i>
         <% end %>
-        <%= link_to 'https://github.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
-          <i class="fab fa-github fa-2x"></i>
-        <% end %>
-        <%= link_to 'https://youtube.com', target: '_blank', class: 'text-white hover:text-gray-400' do %>
-          <i class="fab fa-youtube fa-2x"></i>
+        <%= link_to 'https://www.youtube.com/watch?v=ReI6gvzVP0Y', target: '_blank', class: 'text-white hover:text-gray-400' do %>
+          <i class="fab fa-youtube fa-3x"></i>
         <% end %>
         <% if user_signed_in? %>
           <%= link_to "new post", new_blog_post_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
