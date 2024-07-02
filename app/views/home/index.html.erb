@@ -1,5 +1,10 @@
-<section class="bg-black">
-  <div class="text-white pt-12 pr-0 pb-14 pl-0 bg-black">
+<section class="relative bg-black">
+  <div class="absolute inset-0 overflow-hidden z-0">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-green-400 to-blue-500 opacity-50 blur-xl"></div>
+    <div class="absolute top-1/2 left-1/3 w-96 h-96 bg-gradient-to-r from-yellow-400 to-red-500 opacity-50 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tl from-purple-400 to-pink-500 opacity-50 blur-2xl"></div>
+  </div>
+  <div class="relative z-10 text-white pt-12 pr-0 pb-14 pl-0 bg-black bg-opacity-80">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
       <% @blog_posts.first(1).each do |blog_post| %>
         <div class="flex flex-col items-center sm:px-5 md:flex-row">

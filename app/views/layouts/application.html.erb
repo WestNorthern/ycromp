@@ -43,9 +43,14 @@
           <i class="fab fa-youtube fa-3x"></i>
         <% end %>
         <% if user_signed_in? %>
-          <%= link_to "new post", new_blog_post_path, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
-          <%= button_to "logout", destroy_user_session_path, method: :delete, class: 'block text-3xl py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700 hover:text-white' %>
+          <%= link_to "new post", new_blog_post_path, class: "inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-green-500 hover:to-blue-600 transition duration-300" %>
+          <%= button_to "logout", destroy_user_session_path, method: :delete, class: "inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-green-500 hover:to-blue-600 transition duration-300" %>
         <% end %>
+        <div class="text-center mt-8">
+          <a href="<%= new_blog_post_path %>" class="inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-green-500 hover:to-blue-600 transition duration-300">
+            Hire Me
+          </a>
+        </div>
       </div>
     </div>
   </body>
