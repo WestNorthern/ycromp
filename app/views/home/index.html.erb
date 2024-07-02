@@ -7,33 +7,37 @@
   <div class="relative z-10 text-white pt-12 pr-0 pb-14 pl-0 bg-black bg-opacity-80">
     <div class="w-full pt-4 pr-5 pb-6 pl-5 mt-0 mr-auto mb-0 ml-auto space-y-5 sm:py-8 md:py-12 sm:space-y-8 md:space-y-16 max-w-7xl">
       <% @blog_posts.first(1).each do |blog_post| %>
-        <div class="flex flex-col items-center sm:px-5 md:flex-row">
-          <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
-            <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16 md:space-y-5">
-              <a class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"><%= blog_post.title %></a>
-              <p class="text-sm text-gray-300"><%= truncate(blog_post.summary, length: 150) %></p>
-              <div class="pt-2 pr-0 pb-0 pl-0">
-                <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">· <%= blog_post.published_at.strftime('%d %b %Y') %> ·</p>
+        <a href="<%= blog_post_path(blog_post) %>" class="block">
+          <div class="flex flex-col items-center sm:px-5 md:flex-row">
+            <div class="flex flex-col items-start justify-center w-full h-full pt-6 pr-0 pb-6 pl-0 mb-6 md:mb-0 md:w-1/2">
+              <div class="flex flex-col items-start justify-center h-full space-y-3 transform md:pr-10 lg:pr-16 md:space-y-5">
+                <h2 class="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl"><%= blog_post.title %></h2>
+                <p class="text-sm text-gray-300"><%= truncate(blog_post.summary, length: 150) %></p>
+                <div class="pt-2 pr-0 pb-0 pl-0">
+                  <p class="inline text-sm font-medium mt-0 mr-1 mb-0 ml-1">· <%= blog_post.published_at.strftime('%d %b %Y') %> ·</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2">
+              <div class="block">
+                <%= image_tag blog_post.cover_image, class: "object-cover rounded-lg max-h-64 sm:max-h-96 w-full h-full" if blog_post.cover_image.present? %>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2">
-            <div class="block">
-              <%= image_tag blog_post.cover_image, class: "object-cover rounded-lg max-h-64 sm:max-h-96 w-full h-full" if blog_post.cover_image.present? %>
-            </div>
-          </div>
-        </div>
+        </a>
       <% end %>
       <div class="grid grid-cols-12 sm:px-5 gap-x-8 gap-y-16">
         <% @blog_posts.drop(1).each do |blog_post| %>
-          <div class="flex flex-col items-start col-span-12 space-y-3 sm:col-span-6 xl:col-span-4">
-            <%= image_tag blog_post.cover_image, class: "object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56", alt: "Cover Image" if blog_post.cover_image.present? %>
-            <a class="text-lg font-bold sm:text-xl md:text-2xl"><%= blog_post.title %></a>
-            <p class="text-sm text-gray-300"><%= truncate(blog_post.summary, length: 150) %></p>
-            <div class="pt-2 pr-0 pb-0 pl-0">
-              <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <%= blog_post.published_at.strftime('%d %b %Y') if blog_post.published? %> ·</p>
+          <a href="<%= blog_post_path(blog_post) %>" class="block col-span-12 sm:col-span-6 xl:col-span-4">
+            <div class="flex flex-col items-start space-y-3">
+              <%= image_tag blog_post.cover_image, class: "object-cover w-full mb-2 overflow-hidden rounded-lg shadow-sm max-h-56", alt: "Cover Image" if blog_post.cover_image.present? %>
+              <h2 class="text-lg font-bold sm:text-xl md:text-2xl"><%= blog_post.title %></h2>
+              <p class="text-sm text-gray-300"><%= truncate(blog_post.summary, length: 150) %></p>
+              <div class="pt-2 pr-0 pb-0 pl-0">
+                <p class="inline text-xs font-medium mt-0 mr-1 mb-0 ml-1">· <%= blog_post.published_at.strftime('%d %b %Y') if blog_post.published? %> ·</p>
+              </div>
             </div>
-          </div>
+          </a>
         <% end %>
       </div>
     </div>
