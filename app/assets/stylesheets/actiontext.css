@@ -29,3 +29,32 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+/* app/assets/stylesheets/custom.css */
+
+.trix-button-group--text-tools .trix-button,
+.trix-button-group--file-tools .trix-button,
+.trix-button-group--block-tools .trix-button,
+.trix-button-group--history-tools .trix-button {
+  color: #ffffff; /* White text */
+  background-color: #2d3748; /* Dark gray background */
+  border-color: #4a5568; /* Gray border */
+}
+
+.trix-button-group--text-tools .trix-button:hover,
+.trix-button-group--file-tools .trix-button:hover,
+.trix-button-group--block-tools .trix-button:hover,
+.trix-button-group--history-tools .trix-button:hover {
+  color: #ffffff; /* White text on hover */
+  background-color: #4a5568; /* Slightly lighter gray background on hover */
+  border-color: #718096; /* Lighter gray border on hover */
+}
+
+.trix-button-group--text-tools .trix-active,
+.trix-button-group--file-tools .trix-active,
+.trix-button-group--block-tools .trix-active,
+.trix-button-group--history-tools .trix-active {
+  color: #ffffff; /* White text when active */
+  background-color: #4a5568; /* Slightly lighter gray background when active */
+  border-color: #718096; /* Lighter gray border when active */
+}
