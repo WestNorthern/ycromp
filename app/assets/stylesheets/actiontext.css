@@ -69,6 +69,7 @@
   line-height: 1.25rem !important;
   margin-bottom: 1rem;
   font-weight: 600;
+  color: white;
 }
 
 .trix-content h2 {
@@ -76,6 +77,7 @@
   line-height: 1rem !important;
   margin-bottom: 1rem;
   font-weight: 500;
+  color: white;
 }
 
 .trix-content h3 {
@@ -83,6 +85,7 @@
   line-height: 0.75rem !important;
   margin-bottom: 0.75rem;
   font-weight: 400;
+  color: white;
 }
 
 .trix-content a:not(.no-underline) {
@@ -110,7 +113,7 @@
   width: 100%;
   vertical-align: top;
   font-family: monospace;
-  font-size: 1.5em;
+  font-size: 0.7em;
   padding: 0.5em;
   white-space: pre;
   background-color: #320950;
@@ -158,14 +161,6 @@
   line-height: 1.25rem !important;
   margin-bottom: 1rem;
   font-weight: 600;
-}
-
-.trix-content h1 {
-  font-size: 1.25rem !important;
-  line-height: 1.25rem !important;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: white;
 }
 
 .trix-editor h2 {

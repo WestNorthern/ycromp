@@ -16,13 +16,13 @@
             <p class="text-xl text-gray-300"><%= @blog_post.summary %></p>
           </div>
         </div>
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/2 sm:w-1/4">
           <div class="block">
             <%= image_tag @blog_post.cover_image, class: "object-cover rounded-lg max-h-64 sm:max-h-96 w-full h-full" if @blog_post.cover_image.present? %>
           </div>
         </div>
       </div>
-      <div class="prose w-full lg:prose-xl text-white">
+      <div class="prose max-w-5xl sm:prose-sm md:prose-sm lg:prose-md xl:prose-lg text-white">
         <%= @blog_post.content %>
       </div>
     </div>
