@@ -11,3 +11,7 @@ eagerLoadControllersFrom("controllers", application)
 // lazyLoadControllersFrom("controllers", application)
 
 // app/javascript/controllers/index.js
+
+import TrixMarkController from './trix_mark.js';
+application.register('trix-mark', TrixMarkController);
+
