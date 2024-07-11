@@ -12,6 +12,6 @@ eagerLoadControllersFrom("controllers", application)
 
 // app/javascript/controllers/index.js
 
-import TrixMarkController from 'controllers/trix_mark.js';
-application.register('trix-mark', TrixMarkController);
+// import TrixMarkController from './trix_mark.js';
+// application.register('trix-mark', TrixMarkController);
 
