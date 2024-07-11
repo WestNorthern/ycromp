@@ -49,18 +49,10 @@
       <%= link_to 'https://github.com/westnorthern', target: '_blank', class: 'text-white hover:text-gray-400' do %>
         <i class="fab fa-github fa-3x"></i>
       <% end %>
-      <%= link_to 'https://www.youtube.com/watch?v=ReI6gvzVP0Y', target: '_blank', class: 'text-white hover:text-gray-400' do %>
-        <i class="fab fa-youtube fa-3x"></i>
-      <% end %>
       <% if user_signed_in? %>
         <%= link_to "new post", new_blog_post_path, class: "inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-green-500 hover:to-blue-600 transition duration-300" %>
         <%= button_to "logout", destroy_user_session_path, method: :delete, class: "inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-green-500 hover:to-blue-600 transition duration-300" %>
       <% end %>
-      <div class="text-center mt-8">
-        <a href="<%= contact_path %>" class="inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold py-2 px-4 rounded-md hover:from-green-500 hover:to-blue-600 transition duration-300">
-          Hire Me
-        </a>
-      </div>
     </div>
   </div>
 </body>
