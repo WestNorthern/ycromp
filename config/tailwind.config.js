@@ -13,7 +13,7 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       screens: {
-        'xl-custom': '1500px',
+        'xl-custom': '1400px',
       },
     },
   },
